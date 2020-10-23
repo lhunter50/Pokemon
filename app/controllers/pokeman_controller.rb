@@ -6,4 +6,9 @@ class PokemanController < ApplicationController
   def show
     @pokemon = Pokeman.find(params[:id])
   end
+
+  def search
+    wc_search = "%#{params[:keywords]}%"
+    @pokemon = Pokemon.where("pokemonName LIKE ?", wc_search)
+  end
 end
