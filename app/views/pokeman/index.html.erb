@@ -1,0 +1,39 @@
+ <% @pokemon.each do |pokemonDisplay| %>
+
+ <%end%>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Entry</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th> Typ 2</th>
+      <th>Total Stats</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pokemon.each do |pokemonDisplay| %>
+    <tr>
+      <th><%= pokemonDisplay.entryNumber %></th>
+      <th><%= link_to pokemonDisplay.pokemonName, pokemonDisplay %></th>
+      <th><%= pokemonDisplay.type.type1 %></th>
+      <th><%= pokemonDisplay.type.type2 %></th>
+      <th><%= pokemonDisplay.stat.totalStats %></th>
+      <th><%= pokemonDisplay.stat.hp %></th>
+      <th><%= pokemonDisplay.stat.attack%></th>
+      <th><%= pokemonDisplay.stat.defense %></th>
+      <th><%= pokemonDisplay.stat.spatk%></th>
+      <th><%= pokemonDisplay.stat.spdef %></th>
+      <th><%= pokemonDisplay.stat.speed %></th>
+      <th><%= pokemonDisplay.generation %></th>
+    </tr>
+    <%end%>
+  </tbody>
+</table>

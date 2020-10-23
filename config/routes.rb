@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'stats/index'
-  get 'stats/show'
-  get 'types/index'
-  get 'types/show'
-  get 'pokemon/index'
-  get 'pokemon/show'
+  resources :pokeman, only:[:index, :show]
+  resources :types, only: [:index, :show]
+  resources :stats, only: [:index, :show]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
