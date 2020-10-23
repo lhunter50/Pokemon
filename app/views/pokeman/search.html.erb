@@ -1,1 +1,38 @@
 <p>Found this searching for: <%= params[:keywords] %></p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Entry</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total Stats</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pokemon.each do |pokemonDisplay| %>
+      <tr>
+        <th><%= pokemonDisplay.entryNumber.round %></th>
+        <th><%= link_to pokemonDisplay.pokemonName, pokemonDisplay %></th>
+        <th><%= pokemonDisplay.type.type1 %></th>
+        <th><%= pokemonDisplay.type.type2 %></th>
+        <th><%= pokemonDisplay.stat.totalStats.round %></th>
+        <th><%= pokemonDisplay.stat.hp.round %></th>
+        <th><%= pokemonDisplay.stat.attack.round %></th>
+        <th><%= pokemonDisplay.stat.defense.round %></th>
+        <th><%= pokemonDisplay.stat.spatk.round %></th>
+        <th><%= pokemonDisplay.stat.spdef.round %></th>
+        <th><%= pokemonDisplay.stat.speed.round %></th>
+        <th><%= pokemonDisplay.generation.round %></th>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

@@ -1,1 +1,34 @@
-<h2><%= @pokemon.pokemonName%></h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Entry</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total Stats</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th><%= @pokemon.entryNumber.round %></th>
+        <th><%= @pokemon.pokemonName %></th>
+        <th><%= @pokemon.type.type1 %></th>
+        <th><%= @pokemon.type.type2 %></th>
+        <th><%= @pokemon.stat.totalStats.round %></th>
+        <th><%= @pokemon.stat.hp.round %></th>
+        <th><%= @pokemon.stat.attack.round %></th>
+        <th><%= @pokemon.stat.defense.round %></th>
+        <th><%= @pokemon.stat.spatk.round %></th>
+        <th><%= @pokemon.stat.spdef.round %></th>
+        <th><%= @pokemon.stat.speed.round %></th>
+        <th><%= @pokemon.generation.round %></th>
+      </tr>
+  </tbody>
+</table>
