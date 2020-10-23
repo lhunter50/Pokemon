@@ -10,19 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_22_224443) do
+ActiveRecord::Schema.define(version: 2020_10_23_012938) do
 
   create_table "pokemen", force: :cascade do |t|
     t.decimal "entryNumber"
-    t.string "name"
     t.boolean "legendary"
     t.decimal "generation"
-    t.integer "Stats_id", null: false
-    t.integer "Type_id", null: false
+    t.integer "stat_id", null: false
+    t.integer "type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["Stats_id"], name: "index_pokemen_on_Stats_id"
-    t.index ["Type_id"], name: "index_pokemen_on_Type_id"
+    t.string "pokemonName"
+    t.index ["stat_id"], name: "index_pokemen_on_stat_id"
+    t.index ["type_id"], name: "index_pokemen_on_type_id"
   end
 
   create_table "stats", force: :cascade do |t|
@@ -44,6 +44,6 @@ ActiveRecord::Schema.define(version: 2020_10_22_224443) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "pokemen", "Stats", column: "Stats_id"
-  add_foreign_key "pokemen", "Types"
+  add_foreign_key "pokemen", "stats"
+  add_foreign_key "pokemen", "types"
 end

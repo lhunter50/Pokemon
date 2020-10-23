@@ -5,8 +5,8 @@ class CreatePokemen < ActiveRecord::Migration[6.0]
       t.string :name
       t.boolean :legendary
       t.numeric :generation
-      t.references :Stats, null: false, foreign_key: true
-      t.references :Type, null: false, foreign_key: true
+      t.references :stat, null: false, foreign_key: true
+      t.references :type, null: false, foreign_key: true
 
       t.timestamps
     end

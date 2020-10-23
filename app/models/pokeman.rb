@@ -1,4 +1,4 @@
 class Pokeman < ApplicationRecord
-  belongs_to :Stats
-  belongs_to :Type
+  belongs_to :stat
+  belongs_to :type
 end
