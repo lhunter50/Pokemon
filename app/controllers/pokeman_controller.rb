@@ -1,6 +1,7 @@
 class PokemanController < ApplicationController
   def home
   end
+
   def index
     @pokemon = Pokeman.includes(:type, :stat).order("entryNumber ASC")
   end
@@ -13,4 +14,5 @@ class PokemanController < ApplicationController
     wc_search = "%#{params[:keywords]}%"
     @pokemon = Pokeman.where("pokemonName LIKE ?", wc_search)
   end
+
 end
