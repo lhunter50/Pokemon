@@ -1,2 +1,18 @@
-<h1>Types#index</h1>
-<p>Find me in app/views/types/index.html.erb</p>
+<p class="title is-3">This just displays all the data in Type Model</p>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Type 1</th>
+      <th>Type 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @type.each do |pokemonDisplay| %>
+      <tr>
+        <th><%= pokemonDisplay.type1 %></th>
+        <th><%= pokemonDisplay.type2 %></th>
+      </tr>
+    <%end%>
+  </tbody>
+</table>

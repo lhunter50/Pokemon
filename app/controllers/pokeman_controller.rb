@@ -1,4 +1,7 @@
 class PokemanController < ApplicationController
+  def home
+  end
+
   def index
     @pokemon = Pokeman.includes(:type, :stat).order("entryNumber ASC")
   end

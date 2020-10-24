@@ -15,13 +15,36 @@
   <body>
     <section class="section">
       <div class="container">
-          <h1 class="title is-1">Pokedex</h1>
+      <div>
+      <nav role="navigation" aria-label="main navigation", class="navbar is-fixed-top">
+            <div class="navbar-brand">
+              <a class="navbar-item" href="/pokeman">
+                <img src="https://vignette.wikia.nocookie.net/pokemon-fano/images/6/6f/Poke_Ball.png/revision/latest/scale-to-width-down/340?cb=20140520015336" >
+              </a>
+            </div>
 
-          <%= form_with(url: search_pokeman_index_path, method: "get", local: true) do %>
-            <%= label_tag(:q, "Search for:") %>
-            <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Pokemon") %>
-            <%= submit_tag("Search", class: "button-is-secondary") %>
-          <% end %>
+            <div id="navbarBasicExample" class="navbar-menu">
+              <div class="navbar-start">
+                <a class="navbar-item" href="/pokeman/">
+                  Pokedex
+                </a>
+
+                <a class="navbar-item" href="/about/">
+                  About
+                </a>
+                </div>
+              </div>
+              <div class="navbar-end">
+                <div class="navbar-item">
+                  <%= form_with(url: search_pokeman_index_path, method: "get", local: true) do %>
+                  <%= submit_tag("Search", class: "button-is-primary") %>
+                  <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Pokemon") %>
+                  <% end %>
+                </div>
+              </div>
+          </nav>
+          </div>
+          <h1 class="title is-1">Pokedex</h1>
           <%= yield %>
       </div>
     </section>
