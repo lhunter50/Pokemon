@@ -32,21 +32,32 @@
                 <a class="navbar-item" href="/about/">
                   About
                 </a>
+
+                <a class="navbar-item" href="/stats/">
+                  Stats
+                </a>
+
+                <a class="navbar-item" href="/types/">
+                  Types
+                </a>
                 </div>
               </div>
               <div class="navbar-end">
                 <div class="navbar-item">
                   <%= form_with(url: search_pokeman_index_path, method: "get", local: true) do %>
-                  <%= submit_tag("Search", class: "button-is-primary") %>
-                  <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Pokemon") %>
+                    <%= text_field_tag(:keywords, nil, class: "input", placeholder: "Search for Pokemon") %>
+                    <%= submit_tag("Search", class: "button-is-primary") %>
                   <% end %>
                 </div>
               </div>
           </nav>
           </div>
-          <h1 class="title is-1">Pokedex</h1>
-          <%= yield %>
       </div>
     </section>
+      <div class="container">
+                <h1 class="title is-1">Pokedex</h1>
+          <%= yield %>
+      </div>
+
   </body>
 </html>
