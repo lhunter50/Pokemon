@@ -18,19 +18,6 @@ pokemons.each do |m|
   stat = Stat.find_or_create_by(totalStats: m['Total'], hp: m['HP'], attack: m['Attack'], defense: m['Defense'], spatk: m['Sp. Atk'], spdef: m['Sp. Def'], speed: m['Speed'])
   pokemon = Pokeman.create(entryNumber: m['Entry'], pokemonName: m['Name'], legendary: m['Legendary'], generation: m['Generation'], stat: stat, type: type)
   puts pokemon.errors.messages
-  # pokemon = Pokeman.create(
-  #   entryNumber: m['Entry'],
-  #   name: m['Name'],
-  #   legendary: m['Legendary'],
-  #   generation: m['Generation'],
-  #   Stats_id: stat.id,
-  #   Type_id: type.id
-  # )
-
-  # if type && type.valid? && stat && stat.valid?
-
-  # else puts "Incvalid shit"
-  # end
 end
 
 puts "Created #{Stat.count} stats"
